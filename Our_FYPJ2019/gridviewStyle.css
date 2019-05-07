@@ -1,0 +1,27 @@
+﻿.grid{ 
+    border-collapse:collapse;text-align:center
+
+}
+
+.grid td{
+    padding:10px ;border:1px solid #c1c1c1;color:#444;font-size:1em;
+
+}
+
+.grid th{
+    padding:4px 2px ; color:#707083; text-shadow:1px 1px 0px #ffffff;
+         
+         background: -webkit-gradient(linear,left bottom, left top,color-stop(0,#e5e5e9),color-stop(1,#fbfbfc));
+         
+         border:1px solid #c1c1c1;font-size:1em;text-align:center ;
+         color:black;
+
+}
+         
+.grid th a{color:White;text-decoration:none  ; }
+
+.grid th a:hover{color:#444;text-decoration:none  ;}
+
+.grid .alt{background:linear-gradient(#fff,#e6e6e6);}
+
+

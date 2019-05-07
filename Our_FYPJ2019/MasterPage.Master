@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="FYPJ.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title></title>
+    <meta charset="utf-8" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand mb-0 h1" href="#">FYPJ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active" id="listingpart" runat="server">
+                        <a class="nav-link" href="/ListingItems.aspx">Listings<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active" id="mappart" runat="server">
+                        <a class="nav-link" href="/GoogleMapTest.aspx">Map<span class="sr-only">(current)</span></a>
+                    </li>
+
+
+                    <li class="nav-item dropdown" id="rewardpart" runat="server">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Leaderboard.aspx">Leaderboard</a>
+                            <a class="dropdown-item" href="/E-vouchers.aspx">E-Voucher</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <asp:LinkButton ID="linkquote" CssClass="nav-link" runat="server" Text="Quotation" OnClick="linkquote_Click"></asp:LinkButton>
+                    </li>
+
+                    <li class="nav-item active" id="schedule" runat="server">
+                        <a class="nav-link" href="/Schedule.aspx">Schedule<span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+                <div class="form-inline my-2 my-lg-0" runat="server" id="beforelogin">
+                    <a href="/Register.aspx" class="btn btn-outline-dark my-2 my-sm-0" role="button" aria-pressed="true" style="margin-right: 10px">Register</a>
+                    <a href="/Login.aspx" class="btn btn-outline-dark my-2 my-sm-0" role="button" aria-pressed="true">Login</a>
+                </div>
+
+
+
+                <div class="form-inline my-2 my-lg-0" runat="server" id="afterlogin" visible="false">
+
+                    <%--<button class="btn btn-outline-dark my-2 my-sm-0" runat="server" style="margin-right:10px" id="post">Post</button>
+              <button class="btn btn-outline-dark my-2 my-sm-0" runat="server" id="logout">Logout</button>--%>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown" style="text-align: right">
+                            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../Images/default.jpg" style="width: 10%; height: 10%" />
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: 80%">
+                                <asp:LinkButton ID="linkbtn_profile" CssClass="dropdown-item" runat="server" Text="Profile" OnClick="linkbtn_profile_Click"></asp:LinkButton>
+                                <div class="sellpart" id="sellpart" runat="server">
+                                    <a class="dropdown-item" href="/Activity.aspx">Activity</a>
+                                    <asp:LinkButton ID="Linkbtn_listing" CssClass="dropdown-item" runat="server" Text="Listing" OnClick="Linkbtn_listing_Click"></asp:LinkButton>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <asp:Button ID="postbutton" runat="server" Text="Post" CssClass="btn btn-success my-2 my-sm-0" Style="margin-right: 10px" OnClick="post_Click" />
+                        </li>
+
+                        <li class="nav-item">
+                            <asp:Button ID="logout" runat="server" Text="logout" CssClass="btn btn-outline-dark my-2 my-sm-0" OnClick="logout_Click" CausesValidation="False" />
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </form>
+
+</body>
+</html>
